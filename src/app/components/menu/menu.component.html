@@ -1,1 +1,18 @@
-<p>menu works!</p>
+<button mat-button [matMenuTriggerFor]="aboveMenu">Home</button>
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+  <button mat-menu-item>Home</button>
+  <button mat-menu-item>Work</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Hello</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item>World</button>
+  <button mat-menu-item>My friend</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">My ideas</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Stupid</button>
+  <button mat-menu-item>Smart</button>
+</mat-menu>
+
