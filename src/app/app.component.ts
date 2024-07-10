@@ -10,7 +10,14 @@ import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HelloworldComponent, WelcomebuttonComponent, HighlightDirective, CommonModule, HwcolorDirective],
+  imports: [
+    RouterOutlet,
+    HelloworldComponent, 
+    WelcomebuttonComponent, 
+    HighlightDirective, 
+    CommonModule, 
+    HwcolorDirective, 
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   encapsulation: ViewEncapsulation.None
