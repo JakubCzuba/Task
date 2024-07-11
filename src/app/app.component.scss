@@ -1,0 +1,33 @@
+.homebgcolor{
+    background-color: #0045ac;
+    height: 1%;
+    width: 17%;
+    margin-left: 3%;
+}
+
+.red{
+    background-color: red($color: #000000);
+    height: 1%;
+    width: 17%;
+    margin-left: 3%;
+}
+
+.blue {
+    height: 1%;
+    width: 17%;
+    margin-left: 3%;
+    background-color: blue($color: #000000);
+}
+
+.green{
+    height: 1%;
+    width: 17%;
+    margin-left: 3%;
+    background-color: green($color: #000000);
+}
+
+div{
+    height: 1%;
+    width: 17%;
+    margin-left: 3%;
+}
