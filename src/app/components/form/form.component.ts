@@ -7,14 +7,14 @@ import {merge} from 'rxjs';
 
 /** @title Form field with error messages */
 @Component({
-  selector: 'form-field-error-example',
-  templateUrl: 'form-field-error-example.html',
-  styleUrl: 'form-field-error-example.css',
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrl: './form.component.css',
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormFieldErrorExample {
+export class FormComponent {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
 
   errorMessage = signal('');
