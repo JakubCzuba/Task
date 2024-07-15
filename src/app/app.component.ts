@@ -5,8 +5,6 @@ import { WelcomebuttonComponent } from './components/welcomebutton/welcomebutton
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { CommonModule } from '@angular/common';
 import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
-import { FieldComponent } from './components/field/field.component';
-import { TexthejComponent } from './components/texthej/texthej.component';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +16,6 @@ import { TexthejComponent } from './components/texthej/texthej.component';
     HighlightDirective, 
     CommonModule, 
     HwcolorDirective, 
-    FieldComponent,
-    TexthejComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
