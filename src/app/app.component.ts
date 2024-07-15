@@ -5,7 +5,6 @@ import { WelcomebuttonComponent } from './components/welcomebutton/welcomebutton
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { CommonModule } from '@angular/common';
 import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
-import { FormComponent } from './components/form/form.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +16,6 @@ import { FormComponent } from './components/form/form.component';
     HighlightDirective, 
     CommonModule, 
     HwcolorDirective, 
-    FormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
