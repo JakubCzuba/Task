@@ -5,17 +5,20 @@ import { WelcomebuttonComponent } from './components/welcomebutton/welcomebutton
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { CommonModule } from '@angular/common';
 import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
+import { MenuadiComponent } from './components/menuadi/menuadi.component';
+import { ClassItem } from './Models/menu-item.interface';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    HelloworldComponent, 
-    WelcomebuttonComponent, 
-    HighlightDirective, 
-    CommonModule, 
-    HwcolorDirective, 
+    HelloworldComponent,
+    WelcomebuttonComponent,
+    HighlightDirective,
+    CommonModule,
+    HwcolorDirective,
+    MenuadiComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -24,4 +27,18 @@ import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
 export class AppComponent {
   title = 'task';
   x = 2;
+  menutitems: ClassItem[] = [
+    {
+      name: 'opcja1',
+      backgroundColor: 'green'
+    },
+    {
+      name: 'opcja2',
+      backgroundColor: 'brown'
+    },
+    {
+      name: 'opcja3',
+      backgroundColor: 'yellow'
+    }
+  ];
 }
