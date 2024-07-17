@@ -1,6 +1,11 @@
-<section>
-    <div class="example-button-row">
-      <button mat-button>Hello</button>
-      <a mat-button href="https://www.instagram.com/jakub.czuba.it/" target="_blank">Instagram</a>
-    </div>
-  </section>
+<div *ngFor="let button of menuitems" 
+    [style.backgroundColor]="button.backgroundColor" 
+    [style.padding]="button.padding"
+    [style.margin]="button.margin"
+    [style.color]="button.color"
+    [style.border]="button.border"
+    [style.width]="button.width"
+    [style.height]="button.height"
+  >
+    {{button.name}}
+</div>
