@@ -59,6 +59,16 @@ export class AppComponent {
       border: 'solid',
       width: '100px',
       height: '20px',
+    },
+    {
+      name: 'List',
+      backgroundColor: 'darkred',
+      padding: '20px',
+      margin: '20px',
+      color: 'black',
+      border: 'solid',
+      width: '100px',
+      height: '20px',
     }
   ];
 }
