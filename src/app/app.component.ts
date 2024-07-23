@@ -8,6 +8,7 @@ import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
 import { MenuadiComponent } from './components/menuadi/menuadi.component';
 import { ClassItem } from './Models/menu-item.interface';
 import { MenuButtons } from './Models/menu-buttons.interface';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,8 @@ import { MenuButtons } from './Models/menu-buttons.interface';
     CommonModule,
     HwcolorDirective,
     MenuadiComponent,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -71,4 +74,18 @@ export class AppComponent {
       height: '20px',
     }
   ];
+
+  formsGroup: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+
+    this.formsGroup = this.formBuilder.group({
+      firstName: this.formBuilder.control(''),
+      lastName: this.formBuilder.control(''),
+      age: this.formBuilder.control(0)
+      
+    })
+  }
 }
+
+
