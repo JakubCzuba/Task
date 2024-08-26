@@ -31,3 +31,13 @@
     width: 17%;
     margin-left: 3%;
 }
+
+input.ng-invalid.ng-touched {
+    background: rgb(226, 175, 175);
+}
+
+form {
+    div{
+        display: inline-block
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HelloworldComponent } from './components/helloworld/helloworld.component';
 import { WelcomebuttonComponent } from './components/welcomebutton/welcomebutton.component';
@@ -8,7 +8,8 @@ import { HwcolorDirective } from './directives/hwcolor/hwcolor.directive';
 import { MenuadiComponent } from './components/menuadi/menuadi.component';
 import { ClassItem } from './Models/menu-item.interface';
 import { MenuButtons } from './Models/menu-buttons.interface';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Falsy, first } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'task';
   x = 2;
 
@@ -75,17 +76,42 @@ export class AppComponent {
     }
   ];
 
-  formsGroup: FormGroup;
+  formGrup1: FormGroup;
+  showFavBrowar: Boolean = false;
+  showNazwiskoPanienskie: Boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder1: FormBuilder) {
 
-    this.formsGroup = this.formBuilder.group({
-      firstName: this.formBuilder.control(''),
-      lastName: this.formBuilder.control(''),
-      age: this.formBuilder.control(0)
-      
+    this.formGrup1 = this.formBuilder1.group({
+      firstName: this.formBuilder1.control('', Validators.required),
+      lastName: this.formBuilder1.control('', Validators.required),
+      age: this.formBuilder1.control(0,  Validators.required),
+      favBrowar: this.formBuilder1.control(''),
+      nazwiskoPanienskie: this.formBuilder1.control('')
+    })
+
+  }
+  ngOnInit(): void {
+    this.formGrup1.valueChanges.subscribe(values => {
+       if (values.age >= 18)
+       {
+        this.showFavBrowar = true;
+       }
+       else{
+        this.showFavBrowar = false;
+       }
+
+       if (values.firstName.slice(-1) === "a")
+       {
+        this.showNazwiskoPanienskie = true;
+       }
+       else{
+        this.showNazwiskoPanienskie = false;
+       }
     })
   }
+
 }
+
 
 

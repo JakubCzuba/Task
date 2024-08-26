@@ -3,3 +3,27 @@
 <div class="div1" appHighlight *ngIf="title === 'task'" class="homebgcolor"></div>
 <div class="div1" [ngClass]="{'red': x === 1, 'green' : x === 2, 'blue' : x === 3 }"></div>
 <app-menuadi [items]="menutitems"></app-menuadi>
+<div>
+    <form [formGroup]="formGrup1" >
+        <div>
+            wprowadż imie: 
+            <input type="text" formControlName="firstName">
+        </div>
+        <div>
+            wprowadż nazwisko:
+            <input type="text" formControlName="lastName">
+        </div>
+        <div>
+            wprowadż wiek: 
+            <input type="number" formControlName="age">
+        </div>
+        <div *ngIf="showFavBrowar">
+            wprowadż piwo: 
+            <input type="text" formControlName="favBrowar">
+        </div>    
+            <div *ngIf="showNazwiskoPanienskie">
+            wprowadż nazwisko panieńskie: 
+            <input type="text" formControlName="nazwiskoPanienskie">
+        </div>
+    </form>
+</div>
